@@ -34,19 +34,19 @@ const Problem1 = () => {
       if (show === "completed") {
         return task.status === "Completed";
       }
-      return true; // show all tasks when 'all' is selected
+      return true;
     })
     .sort((a, b) => {
       if (a.status === b.status) {
-        return 0; // Maintain the original order within each status category
+        return 0;
       }
       if (a.status === "Active") {
-        return -1; // Active tasks show first
+        return -1;
       }
       if (a.status === "Completed" && b.status !== "Active") {
-        return -1; // Completed tasks show after Active tasks
+        return -1;
       }
-      return 1; // Other tasks after Completed tasks
+      return 1;
     });
 
   return (
